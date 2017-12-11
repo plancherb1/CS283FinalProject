@@ -1,10 +1,9 @@
-% clear;
-% bw = [8,8,20];
-% [pts_out,xy_out,csize,clusters,cxy] = computeImage(imresize(imread('data/Lake2.jpg'),0.1),bw);
-% [pts_out2,xy_out2,csize2,clusters2,cxy2] = computeImage(imread('data/city.jpg'),bw);
-% [pts_out3,xy_out3,csize3,clusters3,cxy3] = computeImage(imresize(imread('data/ski.jpg'),0.75),bw);
-% [pts_out4,xy_out4,csize4,clusters4,cxy4] = computeImage(imresize(imread('data/nye.jpg'),0.1),bw);
-% disp('hi');
+clear;
+bw = [8,8,20];
+[pts_out,xy_out,csize,clusters,cxy] = computeImage(imresize(imread('data/Lake2.jpg'),0.1),bw);
+[pts_out2,xy_out2,csize2,clusters2,cxy2] = computeImage(imread('data/city.jpg'),bw);
+[pts_out3,xy_out3,csize3,clusters3,cxy3] = computeImage(imresize(imread('data/ski.jpg'),0.75),bw);
+[pts_out4,xy_out4,csize4,clusters4,cxy4] = computeImage(imresize(imread('data/nye.jpg'),0.1),bw);
 
 figure;
 subplot(1,2,1);
