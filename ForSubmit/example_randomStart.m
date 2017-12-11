@@ -1,0 +1,41 @@
+clear;
+% load in the image
+im = imread('data/LakeCastle2.jpg');
+im = imresize(im,0.4);
+lab = rgb2lab(im);
+[X,Y] = meshgrid(1:size(im,2),1:size(im,1));
+data = cat(3,lab,X,Y);
+options.mode = 'A';
+bw = [8,8,20];
+% compute the initial data
+[pts_out,xy_out,csize,clusters,cxy] = meanShiftSegmentFinal(data,bw,options);
+% then compute more clusters
+options.mode = 'C';
+options.cs = cs;
+msPts = cat(3,pts_out,xy_out);
+options.crand = 1;
+[~,~,~,clusters2,~] = meanShiftSegmentFinal(msPts,bw,options);
+[~,~,~,clusters3,~] = meanShiftSegmentFinal(msPts,bw,options);
+[~,~,~,clusters4,~] = meanShiftSegmentFinal(msPts,bw,options);
+[~,~,~,clusters5,~] = meanShiftSegmentFinal(msPts,bw,options);
+[~,~,~,clusters6,~] = meanShiftSegmentFinal(msPts,bw,options);
+[~,~,~,clusters7,~] = meanShiftSegmentFinal(msPts,bw,options);
+figure;
+subplot(3,3,1);
+imshow(im4);
+subplot(3,3,2);
+imshow(lab2rgb(pts_out));
+subplot(3,3,3);
+imshow(lab2rgb(clusters));
+subplot(3,3,4);
+imshow(lab2rgb(clusters2));
+subplot(3,3,5);
+imshow(lab2rgb(clusters3));
+subplot(3,3,6);
+imshow(lab2rgb(clusters4));
+subplot(3,3,7);
+imshow(lab2rgb(clusters5));
+subplot(3,3,8);
+imshow(lab2rgb(clusters6));
+subplot(3,3,9);
+imshow(lab2rgb(clusters7));
