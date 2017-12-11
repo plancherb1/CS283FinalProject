@@ -1,0 +1,18 @@
+MEX {
+	global:
+		mexFunction;
+		mexfilerequiredapiversion;
+		emlrtMexFcnProperties;
+		meanShiftSegmentLABXY;
+		emxEnsureCapacity;
+		emxFree_boolean_T;
+		emxFree_real32_T;
+		emxInit_boolean_T;
+		emxInit_real32_T;
+		emxInit_real32_T1;
+		meanShiftSegmentLABXY_initialize;
+		meanShiftSegmentLABXY_terminate;
+		meanShiftSegmentLABXY_atexit;
+	local:
+		*;
+};
